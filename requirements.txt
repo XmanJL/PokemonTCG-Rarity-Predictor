@@ -1,5 +1,7 @@
+torch
+pandas
+scikit-learn
 fastapi
 uvicorn
-torch
 numpy
-joblib
+matplotlib

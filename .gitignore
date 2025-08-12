@@ -26,8 +26,8 @@ ENV/
 env/
 .venv
 .python-version
-*.ipynb
 .ipynb*
+*.pt
 
 # IDEs and editors
 .idea/
@@ -81,16 +81,6 @@ datasets/
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
 # misc
 .DS_Store
 *.pem
@@ -106,9 +96,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-pokemon
