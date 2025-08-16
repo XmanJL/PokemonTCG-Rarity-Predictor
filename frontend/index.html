@@ -2,83 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon TCG Rarity Predictor</title>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>PokeMon Rairty Predictor</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Pokémon TCG Rarity Predictor</h1>
-        <p class="subtitle">Enter your card details to predict its rarity!</p>
-      </header>
-
-      <div class="card-container">
-        <form id="cardForm">
-          <div class="form-group">
-            <label for="hp">HP:</label>
-            <input
-              id="hp"
-              type="number"
-              min="10"
-              max="340"
-              placeholder="Card HP (10-340)"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="types">Type:</label>
-            <select id="types" required>
-              <option value="">Select Type</option>
-              <option value="Colorless">Colorless</option>
-              <option value="Darkness">Darkness</option>
-              <option value="Dragon">Dragon</option>
-              <option value="Fairy">Fairy</option>
-              <option value="Fighting">Fighting</option>
-              <option value="Fire">Fire</option>
-              <option value="Grass">Grass</option>
-              <option value="Lightning">Lightning</option>
-              <option value="Metal">Metal</option>
-              <option value="Psychic">Psychic</option>
-              <option value="Water">Water</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="retreat">Retreat Cost:</label>
-            <input
-              id="retreat"
-              type="number"
-              min="0"
-              max="5"
-              placeholder="Retreat Cost (0-5)"
-              required
-            />
-          </div>
-
-          <button type="submit" class="predict-btn">Predict Rarity</button>
-        </form>
-
-        <div class="result-container">
-          <div id="result" class="result-card">
-            <div class="result-placeholder">Prediction will appear here</div>
-          </div>
-        </div>
-      </div>
-
-      <footer>
-        <p>
-          Pokémon TCG Project | Built with ❤️ by CPP and SJSU Students
-        </p>
-      </footer>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
