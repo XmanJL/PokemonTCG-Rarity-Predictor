@@ -268,11 +268,14 @@ export default function App() {
 // DO NOT break your logic or comments — only returns the numeric rarity
 async function predictRarity(cardData) {
   try {
-    const res = await fetch("http://127.0.0.1:8000/predict-rarity", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(cardData),
-    });
+    const res = await fetch(
+      "https://pokemontcg-rarity-predictor.onrender.com/predict-rarity",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cardData),
+      }
+    );
 
     if (!res.ok) throw new Error("Failed to fetch prediction");
 
