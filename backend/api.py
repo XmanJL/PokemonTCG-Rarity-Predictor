@@ -17,13 +17,13 @@ app = FastAPI(
 origins = [
     "http://localhost:5173",
     "http://localhost:4173",
-    "https://pokemonraritypredictor.netlify.app/"
+    "https://pokemonraritypredictor.netlify.app"
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_methods=["GET", "POST"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
