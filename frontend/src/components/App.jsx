@@ -265,7 +265,6 @@ export default function App() {
   );
 }
 
-// DO NOT break your logic or comments — only returns the numeric rarity
 async function predictRarity(cardData) {
   try {
     const res = await fetch(
