@@ -29,7 +29,6 @@ checkpoints/
 runs/
 logs/
 wandb/
-*.pt
 *.pth
 *.ckpt
 *.onnx
@@ -38,7 +37,6 @@ wandb/
 *.joblib
 *.npz
 *.npy
-*.json
 
 # Large data
 data/

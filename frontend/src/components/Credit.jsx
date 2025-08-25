@@ -1,4 +1,5 @@
 import jasper from "/src/assets/Jasper.png";
+import ronald from "/src/assets/Ronald.JPG";
 import "../index.css";
 
 export default function Credit() {
@@ -16,7 +17,7 @@ export default function Credit() {
       school: "San Jose State University",
       bio: "I am a Computer Science major at San Jose State University. I gained technical skills through internships, hackathons, and open source contributions. Always happy to connect with others in tech!",
       linkedin: "https://www.linkedin.com/in/ronaldliyh/",
-      img: "https://via.placeholder.com/150", // placeholder
+      img: ronald,
     },
   ];
 
