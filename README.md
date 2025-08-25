@@ -19,7 +19,7 @@ This app is practical for Pokémon market design as it lets the model predict ca
 ### Install backend dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 ### Train ML Model
