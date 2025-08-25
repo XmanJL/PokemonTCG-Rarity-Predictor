@@ -38,6 +38,7 @@ wandb/
 *.joblib
 *.npz
 *.npy
+*.json
 
 # Large data
 data/

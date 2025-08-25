@@ -7,7 +7,7 @@ class RarityPredictor(nn.Module):
         super().__init__()
 
         ### input layer
-        self.input = nn.Linear(32,64)
+        self.input = nn.Linear(31,64)
         
         ### hidden layers
         self.bnorm1 = nn.BatchNorm1d(64) # the number of units into fc1

@@ -1,7 +1,6 @@
 import pandas as pd
 import torch
 import torch.nn as nn
-import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from model import RarityPredictor
@@ -11,7 +10,9 @@ def train():
     # Load and preprocess the dataset
     df = pd.read_csv("../data/pokemon-cards.csv")
     df = full_preprocess(df)
+    # Debugging
     print(df.describe())
+    print(df.columns.tolist()) 
 
     # Prepare features and labels
     labels = torch.tensor(df['rarity'].values).float()
@@ -65,11 +66,6 @@ def trainModel(train_loader, test_loader):
             loss.backward()
             optimizer.step()
                         
-            # compute accuracy
-            matches = torch.argmax(yHat, dim=1) == y
-            matchesNumeric = matches.float()
-            accuracyPct = 100 * torch.mean(matchesNumeric)
-
         # test accuracy
         model.eval()
         X, y = next(iter(test_loader))

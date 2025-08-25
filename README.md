@@ -9,51 +9,42 @@ This app is practical for Pokémon market design as it lets the model predict ca
 
 ![image](https://github.com/user-attachments/assets/17bf85b4-3b56-479e-82ee-0ee0be4161ee)
 
-## Kaggle Dataset
-[Pokemon TCG All Cards 1999 - 2023](https://www.kaggle.com/datasets/adampq/pokemon-tcg-all-cards-1999-2023/data)
+## Works Cited
 
-## Run App Instruction
+1. Kaggle Dataset found at: [Pokemon TCG All Cards 1999 - 2023](https://www.kaggle.com/datasets/adampq/pokemon-tcg-all-cards-1999-2023/data)
+2. App Background image found at: [Pinterest](https://www.pinterest.com/pin/712483603521287382/)
 
-### 1. Install backend dependencies
+## Developer Configure
+
+### Install backend dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run backend server
+### Train ML Model
 
 ```bash
-uvicorn backend.api:app --reload
+cd backend
+python3 train.py
 ```
 
-### 3. Launch frontend
+After this, you should get two data files: `model.pt` and `scalar.json`
 
-Open `frontend/index.html` in a browser.
+### Run both servers in separate terminals
 
----
+1. Open Frontend Server:
 
-## Example Card Input
-
-```json
-{
-  "name": "Charizard",
-  "hp": 150,
-  "types": ["Fire"],
-  "supertype": "Pokémon",
-  "subtypes": ["Stage 2"],
-  "convertedRetreatCost": 3,
-  "generation": "Base",
-  "abilities": [{ "name": "Energy Burn" }],
-  "attacks": [{ "name": "Fire Spin", "damage": "100" }]
-}
+```bash
+cd frontend
+npm run dev
 ```
 
-Returns:
+2. Open Backend Server:
 
-```json
-{
-  "rarity": "Rare Holo"
-}
+```bash
+cd backend
+python3 api.py
 ```
 
----
+3. Check your result by opening browser at `localhost:5173` (default for vite)

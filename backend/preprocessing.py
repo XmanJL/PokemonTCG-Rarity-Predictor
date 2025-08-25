@@ -1,9 +1,9 @@
-import numpy as np
 import pandas as pd
 import ast
 import re
 import scipy.stats as stats
 import copy
+import json
 
 # Turned 'attacks' column into max_damage,numAttacks
 def preprocess_attacks(data):
@@ -88,7 +88,7 @@ def full_preprocess(data):
     # Deal with NaN 
     data = data.dropna(subset=['attacks', 'rarity', 'hp'])
     data = data.rename(columns={'convertedRetreatCost': 'retreat_cost'})
-    data['release_cost'] = data['retreat_cost'].fillna(0)
+    data['retreat_cost'] = data['retreat_cost'].fillna(0)
 
     dataT = copy.deepcopy(data)
 
@@ -107,6 +107,16 @@ def full_preprocess(data):
     dataT = dataT[dataT['retreat_cost']< 5] 
 
     # Normalize necessary columns 
+    # save mean & std from THIS dataset
     cols2zscore = ['hp', 'max_damage']
+    means = dataT[cols2zscore].mean()
+    stds  = dataT[cols2zscore].std(ddof=0)
+    scaler = {
+        col: {"mean": float(means[col]), "std": float(stds[col])}
+        for col in cols2zscore
+    }
+    with open("scaler.json", "w") as f:
+        json.dump(scaler, f, indent=4)
     dataT[cols2zscore] = dataT[cols2zscore].apply(stats.zscore)
+    
     return dataT
